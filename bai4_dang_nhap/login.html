@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<title>Login</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+body{font:14pt Arial,sans-serif;color:navy;margin:60px auto;max-width:420px;padding:0 15px}
+fieldset{border:2px solid green;border-radius:8px;background:#dafeF3;padding:18px}
+legend{color:red;font-weight:bold}
+table{width:100%}td{padding:6px 3px}
+input{border:1px solid silver;padding:7px;font:14pt Arial;max-width:100%;box-sizing:border-box}
+input[type=button]{float:right;padding:6px 14px;cursor:pointer}
+#nt{margin-top:18px;border:1px solid silver;padding:12px;background:#fff5a8;color:green;display:none}
+</style>
+<script>
+$(function(){
+  $('#sm').on('click',function(){
+    $.get('check.php',{user:$('#us').val(),pass:$('#pw').val()},function(data){
+      $('#nt').stop(true,true).html(data).slideDown('slow');
+    }).fail(function(){ $('#nt').text('Không thể kết nối máy chủ.').slideDown(); });
+  });
+  $('#pw').on('keydown',function(e){if(e.key==='Enter') $('#sm').click();});
+});
+</script>
+</head>
+<body>
+<fieldset>
+<legend>LOGIN</legend>
+<h2 style="color:#315ca8;margin:0 0 15px">VKU</h2>
+<table>
+<tr><td style="width:35%">User name</td><td><input type="text" id="us" autocomplete="username"></td></tr>
+<tr><td>Password</td><td><input type="password" id="pw" autocomplete="current-password"></td></tr>
+<tr><td colspan="2"><br><input id="sm" type="button" value="Submit"></td></tr>
+</table>
+</fieldset>
+<div id="nt">Notice:</div>
+</body>
+</html>

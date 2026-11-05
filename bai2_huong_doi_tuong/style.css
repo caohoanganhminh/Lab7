@@ -1,0 +1,9 @@
+body{font-family:Arial,sans-serif;margin:28px;background:#fff;color:#222}
+main{max-width:1000px;margin:auto}
+h1{text-align:center;color:#3920a8;text-shadow:1px 1px #e99}
+select{padding:7px 12px;min-width:160px}
+#info{margin-top:18px;padding:12px;background:#f58b91;overflow-x:auto}
+.table-wrap h3{margin:0 0 10px}
+table{width:100%;border-collapse:collapse;background:#fff}
+th,td{border:1px solid #559b55;padding:7px;text-align:left}
+th{color:blue;background:#efffea}
